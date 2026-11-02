@@ -3,7 +3,9 @@
 A native (arm64 + x86_64) CUPS driver for the HID Fargo HDP5000, rebuilt from
 HID's 2012 Mac driver, which only ran on 32-bit Intel Macs (OS X 10.4/10.5).
 
-**Install:** `driver/Fargo-HDP5000-2.0.0.pkg`
+**Install:** download [Fargo-HDP5000-2.0.0.pkg](https://github.com/Sniffr/fargo-hdp5000-mac/releases/latest/download/Fargo-HDP5000-2.0.0.pkg)
+from the [latest release](https://github.com/Sniffr/fargo-hdp5000-mac/releases/latest)
+(also in the repo at `driver/Fargo-HDP5000-2.0.0.pkg`).
 
 ## How it was made
 
