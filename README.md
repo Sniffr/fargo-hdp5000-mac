@@ -19,7 +19,8 @@ Verification: the original binary runs in an x86 emulator (`emu/run_original.py`
 The new driver's output was compared **byte-for-byte** with it on 59 jobs:
 every ribbon type, both films, duplex, split ribbon, K-panel modes, offsets,
 intensities, transfer heat/dwell, lamination, magnetic encoding, ICC on/off,
-noise and photo/text images. All 59 matched exactly.
+noise and photo/text images. All 59 matched exactly. It has also been tested
+on a real HDP5000, where it prints correctly.
 
 ## Installing
 

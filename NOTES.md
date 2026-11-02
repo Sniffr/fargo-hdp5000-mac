@@ -102,6 +102,6 @@ typo, `OpenUI` lines without `: PickOne`, lamination defaults `None` → `0`
 Package: `driver/Fargo-HDP5000-2.0.0.pkg` (pkgbuild from `driver/pkgroot`,
 postinstall sets root:wheel and go-w so cupsd accepts the filter).
 
-Still unverified until a printer is attached: the USB device ID and URI, and
-whether the 2012-format 12-byte line header suits this unit's firmware. HID's
-Mac driver sent that format, so it is expected to work.
+Hardware: confirmed on a real HDP5000 (November 2026). The printer is detected,
+added and prints with this driver, so the device URI and the 2012-format
+12-byte line header both work with this unit's firmware.
