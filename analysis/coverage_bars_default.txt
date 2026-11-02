@@ -1,0 +1,426 @@
+ 13012224 ___i686.get_pc_thunk.bx
+ 12309386 ___i686.get_pc_thunk.cx
+  6154623 
+  5462504 _nCalculateResidualEnergy
+  4103082 
+  2731252 _uAdjustBurnLevel
+  2731252 _nUpdateEnergy
+  2051541 
+  2051541 
+  2051541 __Z12ClutUnitClipf
+  2051538 
+  1367694 
+  1367694 
+  1367694 
+  1367694 
+  1367694 
+   683847 
+   683847 
+   683847 
+   683847 
+   683847 
+   683847 
+   683847 
+   683847 
+   683847 
+   683847 
+   683847 
+   683847 
+   683847 
+   683847 
+   682813 _nCalcResinLevel
+   232525 
+   232377 
+     8268 _OemRibbonsGetAltFormSupport
+     7143 _EngWritePrinter
+     7143 _WritePrinter
+     7143 
+     6201 _OemSendPacketizedData
+     6198 _OemSendPanelGetLineData
+     5197 _OemRibbonsGetPanelCount
+     4132 _ripDoRibbonWrinkleComp
+     4132 _ripCompressPLineHorz
+     3171 _OemFileWrite
+     3105 _OemRibbonsGetColorSupport
+     2383 _OemSendPacketizedDataFlush
+     2069 _OemPDEVGetMaxPrintWidth
+     2066 _OemFAColorTransform
+     1147 _ripCompressPLineVert
+     1034 _OemSpoolPLineData
+     1033 _FargoRipPLine
+     1033 _RasterizeBand
+     1033 _ripGetMarginWidth
+     1033 _OemIcmColorTranslateColor
+     1033 _ImageSharpenTransform
+     1033 _ImageSharpenFilter
+     1033 _OemFPanelRasterizePLine
+     1033 _OemIPanelRasterizePLine
+     1033 _OemRasterizePLine
+     1033 _ripDoDefinedPrintArea
+     1033 _ripDoKPanelGraphics
+     1033 _ripDyeSub3Color1Resin
+     1033 _OemCompressPLine
+      202 
+      138 
+       80 
+       72 
+       72 _GetPrinterDataW
+       60 
+       48 _OemRegistryGetDataSize
+       47 _GlobalAlloc
+       47 _GlobalFree
+       44 _FargoRipSetupSet
+       44 _OemFileReadBlock
+       42 
+       42 _FargoRipSetupGet
+       25 _OemPLinesGetSize
+       24 _OemFormEnumForms
+       24 _SetLastError
+       24 
+       24 _OemRegistryGetData
+       20 
+       20 _FargoRipSetupAreaGet
+       18 _FargoRipSetupMagSet
+       18 
+       18 _FargoRipSetupMagGet
+       17 _OemFileCreate
+       16 _OemHistoryBufsGetSize
+       16 _OemMagTrackBufsGetSize
+       13 
+       13 
+       12 
+       12 _OemFormGetDatabase
+       11 
+       11 
+       11 
+       11 
+       11 
+       10 _OemHistoryBufsInitialize
+       10 _OemMagTrackBufsInitialize
+        9 
+        9 
+        9 _OemSpoolFilesGetSize
+        8 
+        8 
+        8 _SetPrinterDataW
+        8 _OemLaminateGetDefaults
+        8 _OemLaminateGetInfo
+        8 _OemPLinesInitialize
+        8 _OemValidateSurface
+        8 _OemPLinesFinalize
+        7 
+        7 
+        6 _OemFileErase
+        6 _OemFileGetSize
+        6 _OemFileRewind
+        5 
+        5 
+        5 
+        5 _OemMetaDataBufsGetSize
+        5 _OemTextKPanelSupported
+        5 _OemFileDelete
+        5 _OemHistoryBufsFinalize
+        5 _OemMagTrackBufsFinalize
+        4 _EngFindResource
+        4 _OemRegistrySetData
+        4 _OemLaminateGetDefaultDwell
+        4 _OemLaminateGetDefaultTemp
+        4 _OemMediaGetDefaults
+        4 _OemMediaGetInfo
+        4 _OemDevModeUpdatePaperParams
+        4 _OemFormSupportedOnPrinter
+        4 _OemFormGetInfo1Metrics
+        4 _OemFormGetInfo1MetricsAlt
+        4 _OemFormGetInfo1MetricsCustom
+        4 _OemRibbonsGetResinIndex
+        4 _OemSpoolFilesInitialize
+        4 _ImageSharpenBufsGetSize
+        4 _OemMiscDataBufsGetSize
+        4 _OemRibbonsGetLamTypeCode
+        4 _OemSpoolFilesFinalize
+        3 
+        3 
+        3 
+        3 
+        3 
+        3 
+        3 
+        3 
+        3 _OemDevModeUpdateDependencies
+        3 _OemDevModeUpdatePrintResolution
+        3 _OemDevModeUpdateICMMethod
+        3 _OemExtractBufsGetSize
+        3 _OemFAColorBufsGetSize
+        3 _OemPassThruBufsGetSize
+        3 _OemSendPanelSpoolFile
+        3 _OemRibbonsGetPanelColorCodeUTP
+        3 _OemRibbonsGetPanelHeatCode
+        2 ___cxa_atexit
+        2 _atexit_common
+        2 _get_globals
+        2 
+        2 
+        2 
+        2 
+        2 
+        2 
+        2 
+        2 
+        2 
+        2 
+        2 
+        2 
+        2 
+        2 
+        2 
+        2 
+        2 _lstrcpyW
+        2 _OemDevModeGetDefault
+        2 _OemColorFargoGetDefault
+        2 _OemMediaGetDefaultDwell
+        2 _OemMediaGetDefaultTemp
+        2 _OemGetDefaultHTColorAdjust
+        2 _GetPrinterDriverW
+        2 _OemFPanelCreate
+        2 _OemIPanelCreate
+        2 _OemMetaDataBufsInitialize
+        2 _EngCreateBitmap
+        2 _OemSendPacketizedDataInit
+        2 
+        2 _OemFPanelDelete
+        2 _OemIPanelDelete
+        2 _OemSendSessionKeys
+        2 _OemSendLaminationSectionEx
+        2 _EngDeleteSurface
+        1 __Z41__static_initialization_and_destruction_0ii
+        1 __Z41__static_initialization_and_destruction_0ii
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 _FargoRipEnable
+        1 _OpenPrinterW
+        1 _InitRegistry
+        1 _DrvEnablePDEV
+        1 _LocalAlloc
+        1 _EngLoadModule
+        1 _OemDevModeMergeInput
+        1 _OemDevModeMergeForm
+        1 _OemColorFargoMergeData
+        1 _OemPDEVGetVersionInfo
+        1 _GetVersionExW
+        1 _OemGetFormMetrics
+        1 _OemGetDevCapsInfo
+        1 _OemGetColorInfo
+        1 _OemGetDevInfo
+        1 _EngCreatePalette
+        1 _LocalFree
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 
+        1 _FargoRipCreateSurface
+        1 _DrvEnableSurface
+        1 _OemExtractBufsCreate
+        1 _OemExtractBufsRequired
+        1 _OemExtractBufsInitialize
+        1 _OemPLinesCreate
+        1 _OemPLinesRequired
+        1 _OemSpoolFilesCreate
+        1 _OemSpoolFilesRequired
+        1 _OemClipDataBufsCreate
+        1 _OemClipDataBufsGetSize
+        1 _OemClipDataBufsRequired
+        1 _OemDithrTblBufsCreate
+        1 _OemDithrTblBufsGetSize
+        1 _OemDithrTblBufsRequired
+        1 _OemErrorDifBufsCreate
+        1 _OemErrorDifBufsGetSize
+        1 _OemErrorDifBufsRequired
+        1 _OemFAColorBufsCreate
+        1 _OemFAColorBufsRequired
+        1 _OemFAColorBufsInitialize
+        1 _OemFAColorGetData
+        1 _OemFAColorMergeColorData
+        1 _OemGammaTblBufsCreate
+        1 _OemGammaTblBufsGetSize
+        1 _OemGammaTblBufsRequired
+        1 _OemHistoryBufsCreate
+        1 _OemHistoryBufsRequired
+        1 _ImageSharpenBufsCreate
+        1 _ImageSharpenBufsRequired
+        1 _ImageSharpenBufsInitialize
+        1 _OemLuminTblBufsCreate
+        1 _OemLuminTblBufsGetSize
+        1 _OemLuminTblBufsRequired
+        1 _OemMagTrackBufsCreate
+        1 _OemMagTrackBufsRequired
+        1 _OemMetaDataBufsCreate
+        1 _OemMetaDataBufsRequired
+        1 _OemMiscDataBufsCreate
+        1 _OemMiscDataBufsRequired
+        1 _OemMiscDataBufsInitialize
+        1 _OemPassThruBufsCreate
+        1 _OemPassThruBufsRequired
+        1 _OemPassThruBufsInitialize
+        1 _OemPrintComBufsCreate
+        1 _OemPrintComBufsGetSize
+        1 _OemPrintComBufsRequired
+        1 _EngAssociateSurface
+        1 _FargoRipEraseSurface
+        1 _FargoRipStartDoc
+        1 _DrvStartDoc
+        1 _OemStartDoc
+        1 
+        1 _FargoRipStartPage
+        1 _DrvStartPage
+        1 _EngEraseSurface
+        1 _OemSpoolFilesReset
+        1 _OemErrorDifBufsReset
+        1 _OemHistoryBufsReset
+        1 _OemMagTrackBufsReset
+        1 _OemMetaDataBufsReset
+        1 _OemPassThruBufsReset
+        1 _OemCompressInitialize
+        1 _OemStartPage
+        1 
+        1 
+        1 _FargoRipEndPage
+        1 _DrvSendPage
+        1 _OemCompressFinalize
+        1 _OemEndPage
+        1 _OemSendPage
+        1 _OemSendStartofPrintJob
+        1 _OemSendMetaData
+        1 _OemMetaDataBufsGetData
+        1 _lstrlenW
+        1 _OemSendJobInfoSection
+        1 _OemRibbonsGetTypeCode
+        1 _OemSendGetTOF
+        1 _OemSendIntSettingsSection
+        1 _OemSendSmartEncodeSection
+        1 _OemSendProxEncodeSection
+        1 _OemSendMagEncodeSection
+        1 _OemMagGetTrackCount
+        1 _OemSendColorPanelData
+        1 _OemSendHeatSealPanelData
+        1 _OemSendHeatSealRequired
+        1 _OemSendOverlayPanelData
+        1 _OemSendOverlayCMYKOSupport
+        1 _OemRibbonsGetSpecialCMYKOSupport
+        1 _OemSendOverlayRequired
+        1 _OemSendOverlayLamSkip
+        1 _OemSendLaminationRequired
+        1 _OemIsPageBlank
+        1 _OemSendIntTransferSection
+        1 _OemSendEndofJobSection
+        1 
+        1 _FargoRipEndDoc
+        1 _DrvEndDoc
+        1 _OemEndDoc
+        1 _FargoRipDeleteSurface
+        1 _DrvDisableSurface
+        1 _OemExtractBufsDelete
+        1 _OemExtractBufsFinalize
+        1 _OemPLinesDelete
+        1 _OemSpoolFilesDelete
+        1 _OemClipDataBufsDelete
+        1 _OemDithrTblBufsDelete
+        1 _OemErrorDifBufsDelete
+        1 _OemFAColorBufsDelete
+        1 _OemFAColorBufsFinalize
+        1 _OemGammaTblBufsDelete
+        1 _OemHistoryBufsDelete
+        1 _ImageSharpenBufsDelete
+        1 _ImageSharpenBufsFinalize
+        1 _OemLuminTblBufsDelete
+        1 _OemMagTrackBufsDelete
+        1 _OemMetaDataBufsDelete
+        1 _OemMetaDataBufsFinalize
+        1 _OemMiscDataBufsDelete
+        1 _OemMiscDataBufsFinalize
+        1 _OemPassThruBufsDelete
+        1 _OemPassThruBufsFinalize
+        1 _OemPrintComBufsDelete
+        1 _FargoRipDisable
+        1 _ClosePrinter
+        1 _DrvDisablePDEV
+        1 _OemPDEVFree
+        1 _EngFreeModule
+        1 _EngDeletePalette

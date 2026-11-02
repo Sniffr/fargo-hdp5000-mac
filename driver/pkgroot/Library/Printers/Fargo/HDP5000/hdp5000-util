@@ -1,0 +1,18 @@
+#!/bin/sh
+# Maintenance for a Fargo HDP5000 queue using HID's original command/test files.
+# usage: hdp5000-util <queue> clean|ribbon-cal|film-cal|lam-cal|test-ymck|test-ymc|test-ymckk|test-ymckh|test-k
+DIR=/Library/Printers/Fargo/HDP5000/maintenance
+[ $# -eq 2 ] || { sed -n '3p' "$0" | cut -c3-; echo "queues:"; lpstat -e 2>/dev/null | sed 's/^/  /'; exit 1; }
+case "$2" in
+  clean)      f=CleanPrinter.prn ;;
+  ribbon-cal) f=RibbonCalibration.prn ;;
+  film-cal)   f=FilmCalibration.prn ;;
+  lam-cal)    f=LaminatorCalibration.prn ;;
+  test-ymck)  f=HDP5000_YMCK_Tst.prn ;;
+  test-ymc)   f=HDP5000_YMC_Tst.prn ;;
+  test-ymckk) f=HDP5000_YMCKK_Tst.prn ;;
+  test-ymckh) f=HDP5000_YMCKH_Tst.prn ;;
+  test-k)     f=HDP5000_K_PRM_Tst.prn ;;
+  *) echo "unknown command: $2" >&2; exit 1 ;;
+esac
+exec lp -d "$1" -o raw -t "HDP5000 $2" "$DIR/$f"

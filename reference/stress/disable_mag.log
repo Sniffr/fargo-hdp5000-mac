@@ -1,0 +1,208 @@
+DEBUG: rastertofargoHDP5000 driver starting...
+DEBUG: arg 0: 'rastertofargoHDP5000'
+DEBUG: arg 1: '1'
+DEBUG: arg 2: 'user'
+DEBUG: arg 3: 'title'
+DEBUG: arg 4: '1'
+DEBUG: arg 5: 'DisablePrinting=True MagTrack2=5555'
+DEBUG: MagTrack2='5555'
+DEBUG: From ppd file: HOffset='0'
+DEBUG: From ppd file: VOffset='0'
+DEBUG: Defaulting option DisableCMM to '0'
+DEBUG: From ppd file: ColorMatching='System'
+DEBUG: DisablePrinting='True'
+DEBUG: From ppd file: PrintBothSides='False'
+DEBUG: From ppd file: SplitRibbon='False'
+DEBUG: Defaulting option MirrorPrintFront to '0'
+DEBUG: Defaulting option MirrorPrintBack to '0'
+DEBUG: From ppd file: KPanelOnlyFront='False'
+DEBUG: From ppd file: KPanelOnlyBack='False'
+DEBUG: From ppd file: Ribbon='YMCK'
+DEBUG: From ppd file: film='Clear'
+DEBUG: From ppd file: MagTrackMode1='ISO'
+DEBUG: From ppd file: MagTrackMode2='ISO'
+DEBUG: From ppd file: MagTrackMode3='ISO'
+DEBUG: From ppd file: PageSize='CR80'
+DEBUG: From ppd file: resindither='graphics'
+DEBUG: Defaulting option contrast to '0'
+DEBUG: Defaulting option gamma to '0'
+DEBUG: Defaulting option yellowbalance to '0'
+DEBUG: Defaulting option magentabalance to '0'
+DEBUG: Defaulting option cyanbalance to '0'
+DEBUG: From ppd file: dyesubintensity='0'
+DEBUG: From ppd file: resinheatfront='0'
+DEBUG: From ppd file: resinheatback='0'
+DEBUG: Defaulting option overlayheat to '0'
+DEBUG: From ppd file: transferheat='175'
+DEBUG: From ppd file: transferdwell='20'
+DEBUG: From ppd file: laminationposition='0'
+DEBUG: From ppd file: laminationspeed='20'
+DEBUG: From ppd file: laminationside='None'
+DEBUG: From ppd file: laminationtype1='None'
+DEBUG: From ppd file: laminationtransfertemp1='1300'
+DEBUG: From ppd file: laminationtype2='None'
+DEBUG: From ppd file: laminationtransfertemp2='1500'
+DEBUG: Defaulting option PrintAreaFront to 'FullCardPrintAndOverlay'
+DEBUG: Defaulting option PrintAreaBack to 'FullCardPrintAndOverlay'
+DEBUG: From ppd file: kpanelareafront='none'
+DEBUG: From ppd file: kpanelareaback='none'
+DEBUG: From ppd file: coercivity='High'
+DEBUG: Defaulting option ShiftDataLeft to '0'
+DEBUG: Defaulting option mag1bitdensity to '210bpi'
+DEBUG: Defaulting option mag1charsize to '7bits'
+DEBUG: Defaulting option mag1reversecharbits to 'true'
+DEBUG: Defaulting option mag1asciioffset to 'space'
+DEBUG: Defaulting option mag1lrcgeneration to 'even'
+DEBUG: Defaulting option mag1magparity to 'odd'
+DEBUG: Defaulting option mag2bitdensity to '75bpi'
+DEBUG: Defaulting option mag2charsize to '5bits'
+DEBUG: Defaulting option mag2reversecharbits to 'true'
+DEBUG: Defaulting option mag2asciioffset to 'zero'
+DEBUG: Defaulting option mag2lrcgeneration to 'even'
+DEBUG: Defaulting option mag2magparity to 'odd'
+DEBUG: Defaulting option mag3bitdensity to '210bpi'
+DEBUG: Defaulting option mag3charsize to '5bits'
+DEBUG: Defaulting option mag3reversecharbits to 'true'
+DEBUG: Defaulting option mag3asciioffset to 'zero'
+DEBUG: Defaulting option mag3lrcgeneration to 'even'
+DEBUG: Defaulting option mag3magparity to 'odd'
+DEBUG: Defaulting option FrontUserDefAreaEnabled to '0'
+DEBUG: Defaulting option FrontUserDefHorizontalSize to '20'
+DEBUG: Defaulting option FrontUserDefVerticalSize to '20'
+DEBUG: Defaulting option FrontUserDefXOrigin to '0'
+DEBUG: Defaulting option FrontUserDefYOrigin to '0'
+DEBUG: Defaulting option BackUserDefAreaEnabled to '0'
+DEBUG: Defaulting option BackUserDefHorizontalSize to '20'
+DEBUG: Defaulting option BackUserDefVerticalSize to '20'
+DEBUG: Defaulting option BackUserDefXOrigin to '0'
+DEBUG: Defaulting option BackUserDefYOrigin to '0'
+DEBUG: Defaulting option FrontUserDefArea2Enabled to '0'
+DEBUG: Defaulting option FrontUserDefHorizontalSize2 to '20'
+DEBUG: Defaulting option FrontUserDefVerticalSize2 to '20'
+DEBUG: Defaulting option FrontUserDefXOrigin2 to '0'
+DEBUG: Defaulting option FrontUserDefYOrigin2 to '0'
+DEBUG: Defaulting option FrontUserDefArea3Enabled to '0'
+DEBUG: Defaulting option FrontUserDefHorizontalSize3 to '20'
+DEBUG: Defaulting option FrontUserDefVerticalSize3 to '20'
+DEBUG: Defaulting option FrontUserDefXOrigin3 to '0'
+DEBUG: Defaulting option FrontUserDefYOrigin3 to '0'
+DEBUG: Defaulting option FrontUserDefArea4Enabled to '0'
+DEBUG: Defaulting option FrontUserDefHorizontalSize4 to '20'
+DEBUG: Defaulting option FrontUserDefVerticalSize4 to '20'
+DEBUG: Defaulting option FrontUserDefXOrigin4 to '0'
+DEBUG: Defaulting option FrontUserDefYOrigin4 to '0'
+DEBUG: Defaulting option FrontUserDefArea5Enabled to '0'
+DEBUG: Defaulting option FrontUserDefHorizontalSize5 to '20'
+DEBUG: Defaulting option FrontUserDefVerticalSize5 to '20'
+DEBUG: Defaulting option FrontUserDefXOrigin5 to '0'
+DEBUG: Defaulting option FrontUserDefYOrigin5 to '0'
+DEBUG: Defaulting option BackUserDefArea2Enabled to '0'
+DEBUG: Defaulting option BackUserDefHorizontalSize2 to '20'
+DEBUG: Defaulting option BackUserDefVerticalSize2 to '20'
+DEBUG: Defaulting option BackUserDefXOrigin2 to '0'
+DEBUG: Defaulting option BackUserDefYOrigin2 to '0'
+DEBUG: Defaulting option BackUserDefArea3Enabled to '0'
+DEBUG: Defaulting option BackUserDefHorizontalSize3 to '20'
+DEBUG: Defaulting option BackUserDefVerticalSize3 to '20'
+DEBUG: Defaulting option BackUserDefXOrigin3 to '0'
+DEBUG: Defaulting option BackUserDefYOrigin3 to '0'
+DEBUG: Defaulting option BackUserDefArea4Enabled to '0'
+DEBUG: Defaulting option BackUserDefHorizontalSize4 to '20'
+DEBUG: Defaulting option BackUserDefVerticalSize4 to '20'
+DEBUG: Defaulting option BackUserDefXOrigin4 to '0'
+DEBUG: Defaulting option BackUserDefYOrigin4 to '0'
+DEBUG: Defaulting option BackUserDefArea5Enabled to '0'
+DEBUG: Defaulting option BackUserDefHorizontalSize5 to '20'
+DEBUG: Defaulting option BackUserDefVerticalSize5 to '20'
+DEBUG: Defaulting option BackUserDefXOrigin5 to '0'
+DEBUG: Defaulting option BackUserDefYOrigin5 to '0'
+DEBUG: Perform ICC colormanagement = 1
+DEBUG: Setting black threshold to 0x001019
+DEBUG: FargoRipSetupGet: eFR_page_size = eFR_page_size_CR80
+DEBUG: FargoRipSetupGet: eFR_ribbon_type = eFR_ribbon_type_YMCK
+DEBUG: FargoRipSetupGet: eFR_color_matching = eFR_color_matching_none
+DEBUG: FargoRipSetupGet: eFR_resin_dither = eFR_resin_dither_graphics
+DEBUG: FargoRipSetupGet: eFR_print_both_sides = 0
+DEBUG: FargoRipSetupGet: eFR_split_ribbon = 0
+DEBUG: FargoRipSetupGet: eFR_rotate_front_180 = 0
+DEBUG: FargoRipSetupGet: eFR_rotate_back_180 = 0
+DEBUG: FargoRipSetupGet: eFR_disable_printing = 1
+DEBUG: FargoRipSetupGet: eFR_lamination_position = 0
+DEBUG: FargoRipSetupGet: eFR_lamination_speed = 20
+DEBUG: FargoRipSetupGet: eFR_lamination_side = 0
+DEBUG: FargoRipSetupGet: eFR_lamination_type1 = 0
+DEBUG: FargoRipSetupGet: eFR_lamination_transfertemp1 = 1300
+DEBUG: FargoRipSetupGet: eFR_lamination_type2 = 0
+DEBUG: FargoRipSetupGet: eFR_lamination_transfertemp2 = 1500
+DEBUG: FargoRipSetupGet: eFR_transfer_heat = 175
+DEBUG: FargoRipSetupGet: eFR_transfer_dwell_time = 20
+DEBUG: FargoRipSetupGet: eFR_sharpness = 0
+DEBUG: FargoRipSetupGet: eFR_contrast = 0
+DEBUG: FargoRipSetupGet: eFR_gamma = 0
+DEBUG: FargoRipSetupGet: eFR_yellow_balance = 0
+DEBUG: FargoRipSetupGet: eFR_magenta_balance = 0
+DEBUG: FargoRipSetupGet: eFR_cyan_balance = 0
+DEBUG: FargoRipSetupGet: eFR_dye_sub_intensity = 0
+DEBUG: FargoRipSetupGet: eFR_resin_heat_front = 0
+DEBUG: FargoRipSetupGet: eFR_resin_heat_back = 0
+DEBUG: FargoRipSetupGet: eFR_overlay_heat = 0
+DEBUG: FargoRipSetupGet: eFR_black_threshold = 4121
+DEBUG: FargoRipSetupGet: eFR_offset_vertical = 0
+DEBUG: FargoRipSetupGet: eFR_offset_horizontal = 0
+DEBUG: FargoRipSetupGet: eFR_mag_track_mode_1 = eFR_encoding_mode_ISO
+DEBUG: FargoRipSetupGet: eFR_mag_track_mode_2 = eFR_encoding_mode_ISO
+DEBUG: FargoRipSetupGet: eFR_mag_track_mode_3 = eFR_encoding_mode_ISO
+DEBUG: FargoRipSetupGet: eFR_coercivity = eFR_coercivity_hico
+DEBUG: FargoRipSetupGet: eFR_shift_data_left = 0
+DEBUG: FargoRipSetupGet: eFR_print_area_front = eFR_print_area_full_card_print_and_overlay
+DEBUG: FargoRipSetupGet: eFR_print_area_front = eFR_print_area_full_card_print_and_overlay
+DEBUG: FargoRipSetupGet: eFR_kpanel_area_front = eFR_kpanel_area_none
+DEBUG: FargoRipSetupGet: eFR_kpanel_area_back = eFR_kpanel_area_none
+DEBUG: FargoRipSetupGet: eFR_kpanel_only_front = 0
+DEBUG: FargoRipSetupGet: eFR_kpanel_only_back = 0
+DEBUG: FargoRipSetupMagGet: Mag Trk1 eFR_mag_bit_density = eFR_mag_bit_density_210bpi
+DEBUG: FargoRipSetupMagGet: Mag Trk1 eFR_mag_character_size = eFR_mag_character_size_7bits
+DEBUG: FargoRipSetupMagGet: Mag Trk1 eFR_mag_reverse_char_bits = True
+DEBUG: FargoRipSetupMagGet: Mag Trk1 eFR_mag_ascii_offset = eFR_mag_ascii_offset_space
+DEBUG: FargoRipSetupMagGet: Mag Trk1 eFR_mag_lrc_generation = eFR_mag_lrc_generation_even
+DEBUG: FargoRipSetupMagGet: Mag Trk1 eFR_mag_parity = eFR_mag_parity_odd
+DEBUG: FargoRipSetupMagGet: Mag Trk2 eFR_mag_bit_density = eFR_mag_bit_density_75bpi
+DEBUG: FargoRipSetupMagGet: Mag Trk2 eFR_mag_character_size = eFR_mag_character_size_5bits
+DEBUG: FargoRipSetupMagGet: Mag Trk2 eFR_mag_reverse_char_bits = True
+DEBUG: FargoRipSetupMagGet: Mag Trk2 eFR_mag_ascii_offset = eFR_mag_ascii_offset_zero
+DEBUG: FargoRipSetupMagGet: Mag Trk2 eFR_mag_lrc_generation = eFR_mag_lrc_generation_even
+DEBUG: FargoRipSetupMagGet: Mag Trk2 eFR_mag_parity = eFR_mag_parity_odd
+DEBUG: FargoRipSetupMagGet: Mag Trk3 eFR_mag_bit_density = eFR_mag_bit_density_210bpi
+DEBUG: FargoRipSetupMagGet: Mag Trk3 eFR_mag_character_size = eFR_mag_character_size_5bits
+DEBUG: FargoRipSetupMagGet: Mag Trk3 eFR_mag_reverse_char_bits = True
+DEBUG: FargoRipSetupMagGet: Mag Trk3 eFR_mag_ascii_offset = eFR_mag_ascii_offset_zero
+DEBUG: FargoRipSetupMagGet: Mag Trk3 eFR_mag_lrc_generation = eFR_mag_lrc_generation_even
+DEBUG: FargoRipSetupMagGet: Mag Trk3 eFR_mag_parity = eFR_mag_parity_odd
+DEBUG: FargoRipSetupAreaGet: Side 1, Area 1, eFR_area_resin  X=0, Y=0, width=0, height=0
+DEBUG: FargoRipSetupAreaGet: Side 2, Area 1, eFR_area_resin  X=0, Y=0, width=0, height=0
+DEBUG: FargoRipSetupAreaGet: Side 1, Area 2, eFR_area_resin  X=0, Y=0, width=0, height=0
+DEBUG: FargoRipSetupAreaGet: Side 2, Area 2, eFR_area_resin  X=0, Y=0, width=0, height=0
+DEBUG: FargoRipSetupAreaGet: Side 1, Area 3, eFR_area_resin  X=0, Y=0, width=0, height=0
+DEBUG: FargoRipSetupAreaGet: Side 2, Area 3, eFR_area_resin  X=0, Y=0, width=0, height=0
+DEBUG: FargoRipSetupAreaGet: Side 1, Area 4, eFR_area_resin  X=0, Y=0, width=0, height=0
+DEBUG: FargoRipSetupAreaGet: Side 2, Area 4, eFR_area_resin  X=0, Y=0, width=0, height=0
+DEBUG: FargoRipSetupAreaGet: Side 1, Area 5, eFR_area_resin  X=0, Y=0, width=0, height=0
+DEBUG: FargoRipSetupAreaGet: Side 2, Area 5, eFR_area_resin  X=2, Y=0, width=-2, height=0
+DEBUG: FargoRipSetupAreaGet: Side 1, Area 1, eFR_area_overlay  X=0, Y=0, width=0, height=0
+DEBUG: FargoRipSetupAreaGet: Side 2, Area 1, eFR_area_overlay  X=0, Y=0, width=0, height=0
+DEBUG: FargoRipSetupAreaGet: Side 1, Area 2, eFR_area_overlay  X=0, Y=0, width=0, height=0
+DEBUG: FargoRipSetupAreaGet: Side 2, Area 2, eFR_area_overlay  X=0, Y=0, width=0, height=0
+DEBUG: FargoRipSetupAreaGet: Side 1, Area 3, eFR_area_overlay  X=0, Y=0, width=0, height=0
+DEBUG: FargoRipSetupAreaGet: Side 2, Area 3, eFR_area_overlay  X=0, Y=0, width=0, height=0
+DEBUG: FargoRipSetupAreaGet: Side 1, Area 4, eFR_area_overlay  X=0, Y=0, width=0, height=0
+DEBUG: FargoRipSetupAreaGet: Side 2, Area 4, eFR_area_overlay  X=0, Y=0, width=0, height=0
+DEBUG: FargoRipSetupAreaGet: Side 1, Area 5, eFR_area_overlay  X=0, Y=0, width=0, height=0
+DEBUG: FargoRipSetupAreaGet: Side 2, Area 5, eFR_area_overlay  X=0, Y=0, width=0, height=0
+PAGE: 1 1
+INFO: Printing page 1...
+DEBUG: Orientation=0, PageSize=159,248
+DEBUG: cupsWidth=662, cupsHeight=1033
+DEBUG: Encoding track 2 with string '5555'
+DEBUG: Fargo HDP5000: 1033 lines ripped.
+INFO: Ready to print.
+exit=0 in 24.5s -> /Users/sidneymalingu/hdp/reference/stress/disable_mag.prn (170 bytes)

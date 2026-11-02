@@ -1,0 +1,8 @@
+#!/bin/sh
+# CUPS refuses filters that are not owned by root or are group/world writable.
+D=/Library/Printers/Fargo
+chown -R root:wheel "$D"
+chmod -R go-w "$D"
+chmod 755 "$D/HDP5000/filter/rastertohdp5000" "$D/HDP5000/hdp5000-util"
+ln -sf "$D/HDP5000/hdp5000-util" /usr/local/bin/hdp5000-util 2>/dev/null || true
+exit 0

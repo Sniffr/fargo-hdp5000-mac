@@ -1,0 +1,95 @@
+#!/bin/sh
+
+#
+# Usage:  fargo-netprobe [<interface_name>]
+#
+#         Note:  If no arguments are specified, interface defaults to 'eth0'
+# 
+# This script searches the network for Fargo Electronics card printers.
+# 
+# This script must be executed with root privileges.
+#
+
+
+if [ $# -gt 1 -o "$1" = "-h" -o "$1" = "-?" ]
+then
+	echo "usage: fargo-netprobe [<interface_name>]" >&2
+	echo "       Interface defaults to 'eth0' if no arguments specified." >&2
+	exit 1
+fi
+
+# For those that don't have a path to /sbin already...
+PATH=$PATH:/sbin; export PATH
+
+# Check user's credentials
+
+Creds=`id`
+if [ `expr "$Creds" : 'uid=0('` -ne 6 ]
+then
+	echo "Sorry.  You need to run this script as root." >&2
+	exit 1
+fi
+
+INTERFACE="eth0"
+
+
+if [ $# -eq 1 ]
+then
+	INTERFACE=$1
+fi
+
+
+
+BCAST_ADDR=`ifconfig $INTERFACE | sed -ne '/Bcast/s/.*Bcast:\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\).*/\1/pg'`
+
+if [ -z "$BCAST_ADDR" ]
+then
+	echo "Broadcast address on interface \"$INTERFACE\" not found." >&2
+	echo "Try one of the following interfaces:" >&2
+	ifconfig -a | grep -E '^[a-zA-Z]' | grep -vE '^lo'  | awk '{print $1}' >&2
+	exit 1
+fi
+
+# RCV_COUNT=`ping -n -q -c 1 -b $BCAST_ADDR 2>&1 | sed -ne '/received/s/.* \([0-9]\+\) received.*/\1/pg'`
+RCV_COUNT=`ping -n -c 3 -i 0.1  -b $BCAST_ADDR 2>&1  | sed -ne '/from/s/.*from \([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\).*/\1/pg' | sort -u`
+
+if [ -z "$RCV_COUNT" ]
+then
+	echo "Did not see any responses by pinging $BCAST_ADDR." >&2
+	exit 1
+fi
+
+# We need to do this to really force the ARP cache to be updated.
+for ip_address in $RCV_COUNT
+do
+	ping -n -q -c 2 -i 0.1 $ip_address 2>&1  > /dev/null
+done
+
+
+IEEE_OUI_PREFIX="00:13:44"     # Fargo's IEEE OUI prefix
+
+PRINTER_ADDRS=`arp -na | sed -ne '/'$IEEE_OUI_PREFIX'/s/.*(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)).*/\1/pg'`
+
+if [ -z "$PRINTER_ADDRS" ]
+then
+	# Try again with a secondary IEEE OUI prefix
+	IEEE_OUI_PREFIX="00:80:72"     # Secondary IEEE OUI prefix
+
+	PRINTER_ADDRS=`arp -na | sed -ne '/'$IEEE_OUI_PREFIX'/s/.*(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)).*/\1/pg'`
+fi
+	
+
+if [ ! -z "$PRINTER_ADDRS" ]
+then
+	for i in $PRINTER_ADDRS
+	do
+		echo $i
+	done
+	STATUS=0
+else
+	echo "No Fargo printers found on this local subnet."
+	echo "Is the printer powered on or connected on another network?"
+	STATUS=1
+fi
+
+exit $STATUS

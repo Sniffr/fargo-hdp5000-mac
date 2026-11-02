@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# 
+# fargo-sendprn
+#
+# Script to send raw PRN file to default printer.
+#
+
+if [ $# -ne 1 ]
+then
+	echo "usage: fargo-sendprn <raw_fargo_prn_file>" >&2
+	exit 1
+fi
+
+PrnFile=$1
+
+if [ ! -f $PrnFile ]
+then
+	echo "Error:  File \"$PrnFile\" does not exist." >&2
+	exit 1
+fi
+
+
+echo | lp -o "PrintFromFile=$PrnFile"
+
+exit 0
