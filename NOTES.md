@@ -105,3 +105,10 @@ postinstall sets root:wheel and go-w so cupsd accepts the filter).
 Hardware: confirmed on a real HDP5000 (November 2026). The printer is detected,
 added and prints with this driver, so the device URI and the 2012-format
 12-byte line header both work with this unit's firmware.
+
+Edge alignment (this unit, landscape card held TOP up, Nov 2026). The filter sends
+both offsets as -4x / 4x the value (1/1200 in units). Measured on cards: HOffset +1
+moves the print ~0.2 mm LEFT, VOffset +1 moves it ~0.085 mm UP. A straight-line fit
+over four cards (H +22, -10, -13, -22) puts the centre at H about -8; card-to-card
+repeatability is roughly +/-0.25 mm against ~0.9 mm of bleed per side. Current
+setting: HOffset -7, VOffset -7 (card at -8/-5 measured 0.28 mm right, 0.15 mm up). ID Studio stores these per Mac (Printer settings).

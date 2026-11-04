@@ -39,8 +39,14 @@ on a real HDP5000, where it prints correctly.
 
 * Card size is CR80, portrait (159 × 248 pt). Landscape designs rotate automatically.
 * Options appear in the print dialog (Ribbon, Film, Print Both Sides, K-panel area, heat/intensity, offsets, lamination, …).
-* For crisp black text and barcodes on a YMCK ribbon, set **Front K-Panel Area → Full Card**.
-  HID's default prints black as a Y+M+C mix.
+* For crisp black text and barcodes on a YMCK ribbon, set **Front K-Panel Area → Full Card**
+  *and* **Color Matching → None**. With colour matching on, HID's filter never sends the
+  black resin panel and prints black as a Y+M+C mix.
+* Design cards at the full page size (159 × 248 pt, or 248 × 159 landscape), not the exact
+  card size: the extra ~1 mm per edge is bleed. A design at exact card size prints unscaled
+  in one corner and leaves a white strip along an edge.
+* For designing and printing ID cards, use **HDP5000 ID Studio** (below), which handles
+  all of this for you.
 * Maintenance (sends HID's own command and test files raw):
 
   ```bash
@@ -51,6 +57,29 @@ on a real HDP5000, where it prints correctly.
   `test-ymc`, `test-ymckk`, `test-ymckh` and `test-k`.
 * Troubleshooting: run `cupsctl --debug-logging`, print, then look at
   `/var/log/cups/error_log` (the filter logs every setting it uses).
+
+## HDP5000 ID Studio (card designer)
+
+A Mac app for designing and printing ID cards on the HDP5000, edge to edge.
+Download [HDP5000-ID-Studio-1.0.zip](https://github.com/Sniffr/fargo-hdp5000-mac/releases/latest/download/HDP5000-ID-Studio-1.0.zip),
+unzip it and drag **HDP5000 ID Studio** into Applications. It needs the driver above.
+The app is not signed by Apple: the first time, right-click it and choose **Open**
+(or **System Settings → Privacy & Security → Open Anyway**).
+
+* **Design cards:** front and back, text, logo, photo, Code 128 barcode, QR code and
+  shapes, starting from an employee ID template.
+* **Print a ready-made design:** *File → Print a Ready-Made Design…* takes a PNG, JPG,
+  HEIC or PDF (pick two files for front and back). Choose **Fill to edge**, **Fit on card**
+  (nothing cut off) or **Stretch**, then fine-tune size and position.
+* **Batches:** load a CSV and type `{{Column}}` in any text, barcode or QR; a photo box can
+  take each person's photo file from a column. Print all rows or a selection.
+* **No white edges:** everything is printed to the full bleed page. If a strip of white still
+  shows on one edge, use *Printer → Print Alignment Card*: the card has a frame 2 mm in from
+  every edge, and the arrows (or *Fine-tune by measuring*) move the print. On the unit this
+  was tested on, one horizontal step is ~0.2 mm and one vertical step ~0.085 mm.
+* Pure-black text and barcodes go to the black resin panel so they scan reliably.
+
+Build from source: `app/build_app.sh` (Swift command line tools are enough; no Xcode needed).
 
 ## Rebuilding
 
