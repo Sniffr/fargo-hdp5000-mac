@@ -124,6 +124,8 @@ struct CardSide: Codable, Equatable {
     var artworkScale: Double? = nil      // percent of the fitted size
     var artworkOffsetX: Double? = nil    // mm, + = right
     var artworkOffsetY: Double? = nil    // mm, + = down
+    var artworkRotation: Int? = nil      // degrees clockwise: 0, 90, 180 or 270
+    var artworkExtendEdges: Bool? = nil  // fill the space around a shrunk design with its own edge colours
     var elements: [CardElement] = []
 }
 

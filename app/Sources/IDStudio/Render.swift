@@ -23,7 +23,21 @@ enum Renderer {
         ctx.setFillColor(side.background.cg)
         ctx.fill(bleed)
         if let data = side.artwork, let img = cgImage(from: data) {
-            drawImage(img, in: artworkRect(img, side: side, orientation: orientation), fit: .stretch, ctx: ctx)
+            let r = artworkRect(img, side: side, orientation: orientation)
+            let rot = artworkRotation(side)
+            ctx.saveGState()
+            ctx.clip(to: bleed)
+            var box = r
+            if rot != 0 {
+                // r is the rotated footprint; draw the upright image turned about its centre.
+                ctx.translateBy(x: r.midX, y: r.midY)
+                ctx.rotate(by: CGFloat(rot) * .pi / 180)
+                let s = rot == 180 ? r.size : CGSize(width: r.height, height: r.width)
+                box = CGRect(x: -s.width / 2, y: -s.height / 2, width: s.width, height: s.height)
+            }
+            if side.artworkExtendEdges == true { extendEdges(img, around: box, ctx: ctx) }
+            drawImage(img, in: box, fit: .stretch, ctx: ctx)
+            ctx.restoreGState()
         }
         let o = orientation.trimOrigin
         ctx.translateBy(x: o.x, y: o.y)
@@ -41,7 +55,8 @@ enum Renderer {
     static func artworkRect(_ img: CGImage, side: CardSide, orientation: Orientation) -> CGRect {
         let bleed = CGRect(origin: .zero, size: orientation.bleed)
         let trim = CGRect(origin: orientation.trimOrigin, size: orientation.trim)
-        let iw = CGFloat(img.width), ih = CGFloat(img.height)
+        let quarter = artworkRotation(side) % 180 == 90
+        let iw = CGFloat(quarter ? img.height : img.width), ih = CGFloat(quarter ? img.width : img.height)
         var r: CGRect
         switch side.artworkFit {
         case .stretch: r = bleed
@@ -58,6 +73,31 @@ enum Renderer {
         return CGRect(x: c.x - r.width * k / 2, y: c.y - r.height * k / 2, width: r.width * k, height: r.height * k)
     }
 
+    /// Paint the space around a design with its own edge pixels pulled outward
+    /// (each side keeps its colours), so a shrunk design shows no border.
+    static func extendEdges(_ img: CGImage, around r: CGRect, ctx: CGContext) {
+        let w = img.width, h = img.height
+        guard w > 8, h > 8 else { return }
+        let k = min(2, w / 100, h / 100)           // skip an anti-aliased outermost pixel
+        let e: CGFloat = 80, o: CGFloat = 0.5      // reach past any bleed; overlap to avoid seams
+        func strip(_ x: Int, _ y: Int, _ sw: Int, _ sh: Int, _ dest: CGRect) {
+            if let s = img.cropping(to: CGRect(x: x, y: y, width: sw, height: sh)) { drawImage(s, in: dest, fit: .stretch, ctx: ctx) }
+        }
+        ctx.saveGState()
+        ctx.interpolationQuality = .none
+        strip(k, 0, 1, h, CGRect(x: r.minX - e, y: r.minY, width: e + o, height: r.height))
+        strip(w - 1 - k, 0, 1, h, CGRect(x: r.maxX - o, y: r.minY, width: e + o, height: r.height))
+        strip(0, k, w, 1, CGRect(x: r.minX, y: r.minY - e, width: r.width, height: e + o))
+        strip(0, h - 1 - k, w, 1, CGRect(x: r.minX, y: r.maxY - o, width: r.width, height: e + o))
+        strip(k, k, 1, 1, CGRect(x: r.minX - e, y: r.minY - e, width: e + o, height: e + o))
+        strip(w - 1 - k, k, 1, 1, CGRect(x: r.maxX - o, y: r.minY - e, width: e + o, height: e + o))
+        strip(k, h - 1 - k, 1, 1, CGRect(x: r.minX - e, y: r.maxY - o, width: e + o, height: e + o))
+        strip(w - 1 - k, h - 1 - k, 1, 1, CGRect(x: r.maxX - o, y: r.maxY - o, width: e + o, height: e + o))
+        ctx.restoreGState()
+    }
+
+    static func artworkRotation(_ side: CardSide) -> Int { ((side.artworkRotation ?? 0) % 360 + 360) % 360 }
+
     /// Average colour of an image's four corners, to fill around a shrunk design.
     static func cornerColor(_ img: CGImage) -> HexColor? {
         let w = img.width, h = img.height
@@ -67,12 +107,15 @@ enum Renderer {
               let p = ctx.data?.assumingMemoryBound(to: UInt8.self) else { return nil }
         ctx.draw(img, in: CGRect(x: 0, y: 0, width: w, height: h))
         let inset = max(1, min(w, h) / 100)      // step in from the very edge
-        var sum = [0, 0, 0]
+        var sum = [0, 0, 0], n = 0
         for (x, y) in [(inset, inset), (w - 1 - inset, inset), (inset, h - 1 - inset), (w - 1 - inset, h - 1 - inset)] {
-            let i = (y * w + x) * 4
-            for c in 0..<3 { sum[c] += Int(p[i + c]) }
+            let i = (y * w + x) * 4, a = Int(p[i + 3])
+            guard a >= 200 else { continue }        // transparent rounded corners say nothing about the edge
+            for c in 0..<3 { sum[c] += min(255, Int(p[i + c]) * 255 / a) }
+            n += 1
         }
-        return HexColor(String(format: "#%02X%02X%02XFF", sum[0] / 4, sum[1] / 4, sum[2] / 4))
+        guard n > 0 else { return nil }
+        return HexColor(String(format: "#%02X%02X%02XFF", sum[0] / n, sum[1] / n, sum[2] / n))
     }
 
     static func drawElement(_ el: CardElement, fields: [String: String], ctx: CGContext, showPlaceholders: Bool) {
@@ -192,7 +235,8 @@ enum Renderer {
 
     // MARK: images
 
-    private static var cache = NSCache<NSData, CGImage>()
+    // Decoded images are large; keep only a few (bulk printing walks through many).
+    private static let cache: NSCache<NSData, CGImage> = { let c = NSCache<NSData, CGImage>(); c.countLimit = 12; return c }()
 
     static func cgImage(from data: Data) -> CGImage? {
         if let c = cache.object(forKey: data as NSData) { return c }
@@ -203,7 +247,7 @@ enum Renderer {
             // Honour the camera's orientation flag so phone photos aren't sideways.
             let opts: [CFString: Any] = [kCGImageSourceCreateThumbnailFromImageAlways: true,
                                          kCGImageSourceCreateThumbnailWithTransform: true,
-                                         kCGImageSourceThumbnailMaxPixelSize: 4000]
+                                         kCGImageSourceThumbnailMaxPixelSize: 3000]
             img = CGImageSourceCreateThumbnailAtIndex(src, 0, opts as CFDictionary)
         }
         if let img { cache.setObject(img, forKey: data as NSData) }

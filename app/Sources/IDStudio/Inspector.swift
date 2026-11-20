@@ -39,12 +39,16 @@ struct Inspector: View {
                         value: opt($side.artworkOffsetX, 0), in: -5...5, step: 0.1)
                 Stepper(String(format: "Move down/up: %+.1f mm", side.artworkOffsetY ?? 0),
                         value: opt($side.artworkOffsetY, 0), in: -5...5, step: 0.1)
+                Toggle("Extend design edges into the margin", isOn: Binding(get: { side.artworkExtendEdges == true },
+                                                                          set: { side.artworkExtendEdges = $0 ? true : nil }))
+                    .help("Fills the space around a shrunk design with its own edge colours, so no border shows")
                 HStack {
                     Button("Match background to design") {
                         if let d = side.artwork, let img = Renderer.cgImage(from: d), let c = Renderer.cornerColor(img) { side.background = c }
                     }
                     .help("Colour the area around a shrunk design like the design's own edges, so no border shows")
-                    Button("Reset") { side.artworkScale = nil; side.artworkOffsetX = nil; side.artworkOffsetY = nil }
+                    Button("Rotate 90°") { side.artworkRotation = ((side.artworkRotation ?? 0) + 90) % 360 }
+                    Button("Reset") { side.artworkScale = nil; side.artworkOffsetX = nil; side.artworkOffsetY = nil; side.artworkRotation = nil }
                 }
                 Text("Shrink the design until nothing important touches the card outline. The space around it prints in the background colour.")
                     .font(.caption).foregroundStyle(.secondary)

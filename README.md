@@ -61,13 +61,19 @@ on a real HDP5000, where it prints correctly.
 ## HDP5000 ID Studio (card designer)
 
 A Mac app for designing and printing ID cards on the HDP5000, edge to edge.
-Download [HDP5000-ID-Studio-1.0.zip](https://github.com/Sniffr/fargo-hdp5000-mac/releases/latest/download/HDP5000-ID-Studio-1.0.zip),
+Download [HDP5000-ID-Studio.zip](https://github.com/Sniffr/fargo-hdp5000-mac/releases/latest/download/HDP5000-ID-Studio.zip),
 unzip it and drag **HDP5000 ID Studio** into Applications. It needs the driver above.
 The app is not signed by Apple: the first time, right-click it and choose **Open**
 (or **System Settings → Privacy & Security → Open Anyway**).
 
-* **Design cards:** front and back, text, logo, photo, Code 128 barcode, QR code and
-  shapes, starting from an employee ID template.
+* **Bulk print a folder** (the window it opens with): point it at a folder of finished card
+  pictures. Files pair up by name: `id_front.png` + `id_back.png` is one card,
+  `id_front(1).png` + `id_back(1).png` another; files without "front"/"back" print
+  one-sided. It previews every card as it will print (fitted inside the card, nothing cut
+  off, margins filled with the design's own edge colours), then prints them all after you
+  confirm. Nothing in the folder is moved or deleted.
+* **Design cards:** *File → New* (front and back, text, logo, photo, Code 128 barcode,
+  QR code and shapes, starting from an employee ID template).
 * **Print a ready-made design:** *File → Print a Ready-Made Design…* takes a PNG, JPG,
   HEIC or PDF (pick two files for front and back). Choose **Fill to edge**, **Fit on card**
   (nothing cut off) or **Stretch**, then fine-tune size and position.
